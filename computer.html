@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>calc</title>
+
+    <style>
+       
+    input {width:60px; text-align:right;}
+    output {color: rgb(255, 72, 72); margin-left: 10px;}
+    select {width:30px; height: 22px;margin-left: 10px; margin-right: 10px;}
+    #b {margin-right: 10px;}
+
+    </style> 
+    
+    <script>
+    function calc() {
+            var a = parseInt(document.getElementById('a').value);
+            var b = parseInt(document.getElementById('b').value);
+            var t = document.getElementById('ctype').value;
+        
+            switch (t) {
+                    case 'plus':
+                        var r =  a+b ;
+                        break;
+                    case 'minus':
+                        var r =  a-b ;
+                        break;
+                    case 'times':
+                        var r =  a*b ;
+                        break;
+                    case 'divide':
+                        var r =  a/b ;
+                        break;
+             }
+             document.getElementById('result').value = r;        
+     }  
+    </script>
+    
+</head>
+
+<body>
+   
+    <input id="a" type="text" />
+    <select id="ctype">
+        <option value="plus">+</option>
+        <option value="minus">-</option>
+        <option value="times">x</option>
+        <option value="divide">/</option>
+    </select>
+    <input id="b" type="text" />
+    <button onclick="calc()">＝</button>
+    <output id='result'></output>
+  
+</body>
+</html>
